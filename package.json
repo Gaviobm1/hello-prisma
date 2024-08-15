@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node ./script.ts",
+    "data-migration:add-status-column": "ts-node ./prisma/migrations/20240815165941_add_status_column/data-migration.ts"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,9 @@
     "prisma": "^5.18.0"
   },
   "dependencies": {
-    "@prisma/client": "^5.18.0"
+    "@prisma/client": "^5.18.0",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.6.3",
+    "typescript": "^5.5.4"
   }
 }

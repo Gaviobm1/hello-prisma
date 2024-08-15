@@ -32,10 +32,10 @@ model Post {
   comments  Json?
   views Int @default(0)
   likes Int @default(0)
-  published Boolean @default(false)
   author User?  @relation(fields: [authorId], references: [id] )
   authorId  Int?
   categories  Category[]
+  status  Status  @default(Unknown)
 }
 
 model Category {
@@ -47,4 +47,12 @@ model Category {
 enum Role {
   USER 
   ADMIN
+}
+
+enum Status {
+  Unknown
+  Draft
+  InProgress
+  InReview
+  Published
 }
